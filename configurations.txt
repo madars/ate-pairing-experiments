@@ -1,0 +1,7 @@
+Works:
+Ubuntu 15.04 with "Ubuntu clang version 3.6.0-2ubuntu1 (tags/RELEASE_360/final) (based on LLVM 3.6.0)"
+Debian jessie with "g++ (Debian 4.9.2-10) 4.9.2"
+
+Fails:
+Ubuntu 15.04 with "g++ (Ubuntu 4.9.2-10ubuntu13) 4.9.2"
+Debian testing with "g++ (Debian 4.9.2-10) 4.9.2"

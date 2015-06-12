@@ -1,0 +1,16 @@
+(gdb) run
+Starting program: ./test 
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0000000000429cf1 in mie::VuintT<mie::local::FixedBuffer<unsigned long, 576ul> >::sub (out=..., x=..., y=...) at ../include/zm.h:597
+597		static void sub(VuintT& out, const VuintT& x, const VuintT& y)
+(gdb) backtrace
+#0  0x0000000000429cf1 in mie::VuintT<mie::local::FixedBuffer<unsigned long, 576ul> >::sub (out=..., x=..., y=...) at ../include/zm.h:597
+#1  0x000000000042ccd7 in sub (y=..., x=..., out=...) at ../include/zm.h:1254
+#2  operator-= (rhs=..., this=0x1) at ../include/zm.h:137
+#3  mie::ZmZ<mie::VuintT<mie::local::FixedBuffer<unsigned long, 576ul> >, MontgomeryTest>::inv (out=..., x=...) at ../include/zm.h:1321
+#4  0x0000000000411b6b in inverse (this=0x7fffffffdb30) at ../include/zm.h:171
+#5  mie::Fp::setModulo (p=..., mode=mode@entry=-1, useMulx=useMulx@entry=true) at zm2.cpp:3621
+#6  0x0000000000408bad in bn::ParamT<bn::Fp2T<mie::Fp> >::init (cp=..., mode=mode@entry=-1, useMulx=useMulx@entry=true) at depinst/include/bn.h:241
+#7  0x0000000000401748 in init (useMulx=true, mode=-1) at depinst/include/bn.h:289
+#8  main () at test.cpp:5
